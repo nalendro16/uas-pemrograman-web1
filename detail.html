@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Resep - ResepKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <nav class="bg-white shadow">
+      <div class="max-w-4xl mx-auto px-4 py-4 flex items-center">
+        <a
+          href="index.html"
+          class="text-gray-500 hover:text-orange-500 flex items-center gap-2"
+        >
+          &larr; Kembali ke Daftar Resep
+        </a>
+      </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-4xl font-extrabold text-gray-900 mb-4">
+        Nasi Goreng Spesial ala Rumahan
+      </h1>
+
+      <img
+        src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1200&q=80"
+        alt="Nasi Goreng Spesial"
+        class="w-full h-96 object-cover rounded-xl shadow-md mb-8"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="md:col-span-1">
+          <h2 class="text-2xl font-bold mb-4">Bahan-bahan</h2>
+          <div class="overflow-x-auto bg-white rounded-lg shadow mb-6">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-orange-100 text-orange-800 border-b">
+                  <th class="p-3 font-semibold">Bahan</th>
+                  <th class="p-3 font-semibold">Takaran</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-3">Nasi Putih Dingin</td>
+                  <td class="p-3">2 Porsi</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-3">Telur Ayam</td>
+                  <td class="p-3">2 Butir</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-3">Bawang Merah</td>
+                  <td class="p-3">5 Siung</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3">Kecap Manis</td>
+                  <td class="p-3">3 sdm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-4">Cara Memasak</h2>
+
+          <div class="space-y-4 text-gray-700 leading-relaxed mb-10">
+            <p>
+              Langkah pertama untuk membuat nasi goreng yang *pera* dan tidak
+              lembek adalah dengan menggunakan nasi yang sudah didinginkan
+              semalaman di kulkas. Panaskan wajan dengan sedikit minyak di atas
+              api sedang.
+            </p>
+            <p>
+              Tumis bawang merah dan bawang putih yang sudah dihaluskan hingga
+              harum. Masukkan telur, lalu orak-arik hingga matang. Tambahkan
+              nasi putih, aduk rata dengan bumbu dan telur.
+            </p>
+            <p>
+              Tuangkan kecap manis, garam, dan lada secukupnya. Besarkan api
+              sedikit agar tercipta aroma <i>smokey</i> dari wajan panas. Aduk
+              cepat hingga semua tercampur rata dan matang sempurna. Sajikan
+              selagi hangat!
+            </p>
+          </div>
+
+          <h3 class="text-xl font-bold mb-4">Video Tutorial</h3>
+          <div
+            class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-lg bg-black"
+          >
+            <iframe
+              class="w-full h-64 md:h-80"
+              src="https://youtu.be/Js9FXCkn798?si=Gx_OilHbjYP3EfkE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
