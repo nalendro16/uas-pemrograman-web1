@@ -1,35 +1,281 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beranda - ResepKu</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="bg-white shadow sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between items-center py-4">
-          <a href="#" class="text-2xl font-bold text-orange-500">ResepKu</a>
-          <div class="space-x-4">
-            <a
-              href="#koleksi-resep"
-              class="text-gray-600 hover:text-orange-500 smooth-link"
-              >Lihat Resep</a
-            >
-            <a href="./login.html" class="text-red-500 hover:text-red-700"
-              >Keluar</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>
+<!-- 
+IDENTITAS KELOMPOK
+1. Nalendro Agung Wicaksono 250401020137
+2. Muhamad Rivaldi alviana 250401010374
+3. Yuskiah Azizah Pangestu 250401010364
+4. Maria Rosalina Tawa 250401010387
+5. Nurul Sahhita 250401010367
+-->
 
-    <main class="m-12">Ini halaman list</main>
-  </body>
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResepKu - Katalog Resep Masakan Nusantara</title>
+    <!-- Memanggil Tailwind CSS lewat CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- 1. Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+            <!-- Logo Web -->
+             <a href="#" class="flex items-center gap-2.5 group">
+                <div class="flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                </div>
+                <span class="text-2xl font-black tracking-tight text-gray-900">
+                    Resep<span class="text-orange-500">Ku</span>
+                </span>
+            </a>
+
+            <!-- Menu Navigasi (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
+                <a href="#" class="hover:text-orange-500 transition-colors">Beranda</a>
+                <a href="#katalog-resep" class="js-scroll-link hover:text-orange-500 transition-colors">Katalog Resep</a>
+                <a href="#kategori" class="hover:text-orange-500 transition-colors">Kategori Populer</a>
+            </nav>
+
+            <!-- Tombol Aksi Navigasi -->
+            <a href="#katalog-resep" class="js-scroll-link bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all text-sm flex items-center gap-2">
+                <span>Cari Resep</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. Hero / Banner Atas -->
+    <section class="relative bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 text-white py-16 md:py-24 px-4 overflow-hidden">
+        <div class="container mx-auto max-w-4xl text-center relative z-10">
+            <span class="bg-white/20 text-white text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider inline-block mb-4 backdrop-blur-md">
+                Platform Terfavorit Nusantara
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6">
+                Cari Inspirasi dan Bagikan Resep Andalanmu!
+            </h1>
+            <p class="text-orange-100 text-base md:text-xl mb-8 max-w-2xl mx-auto font-normal">
+                Jelajahi ribuan resep nusantara praktis dan lengkap dengan panduan takaran, estimasi waktu, dan instruksi langkah demi langkahnya.
+            </p>
+            <div class="flex justify-center">
+                <a href="#katalog-resep" class="js-scroll-link bg-white text-orange-600 font-bold px-8 py-3.5 rounded-xl shadow-xl hover:bg-orange-50 transition-all text-center">
+                    Lihat Semua Resep
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Bagian Utama: Grid Resep -->
+    <main id="katalog-resep" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <!-- Judul Bagian -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-gray-200 pb-6">
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Rekomendasi Resep yang Mungkin Kamu Cari</h3>
+                <p class="text-gray-500 mt-1 text-sm md:text-base">Inspirasi hidangan lezat yang dirancang untuk pemula hingga profesional</p>
+            </div>
+            <span class="bg-orange-100 text-orange-800 font-bold text-xs px-3 py-1 rounded-full w-fit">
+                6 Resep Spesial
+            </span>
+        </div>
+
+        <!-- Grid Pembungkus Kartu Resep -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            
+            <!-- Kartu Resep 1 -->
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <img src="assets/mie-goreng.png"
+                         alt="Mie Goreng ala Chinese Resto" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </span>
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
+                        25 Menit
+                    </span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
+                       Mie Goreng Spesial ala Chinese Resto
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
+                        Kombinasi tekstur mie yang lembut dan sedikit kenyal dengan aroma bumbu tumis sederhana yang harum dan legit dalam satu waktu.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                        <span class="text-xs text-gray-500 font-medium">By Chef Devina</span>
+                        <a href="#" class="text-sm font-bold text-orange-500 hover:text-orange-600">
+                            Lihat Resep →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu Resep 2 -->
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <img src="assets/gulai-ayam.jpg"
+                         alt="Gulai Ayam" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
+                        45 Menit
+                    </span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
+                        Gulai Ayam Khas Minang
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
+                        Cita rasa kuah santan yang kental dan gurih bercampur harum semerbak aroma rempah yang kuat, berpadu hangat dengan tekstur daging ayam yang empuk.
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                        <span class="text-xs text-gray-500 font-medium">By Dapur Budi</span>
+                        <a href="#" class="text-sm font-bold text-orange-500 hover:text-orange-600">
+                            Lihat Resep →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu Resep 3 -->
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <img src="assets/mie-ayam.jpg"
+                         alt="Mie Ayam" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
+                        45 Menit
+                    </span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
+                        Mie Ayam Khas Wonogiri
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
+                        Tekstur mie yang kenyal, aroma minyak bumbu yang harum hingga perpaduan rasa gurih dan manis dari topping ayam.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                        <span class="text-xs text-gray-500 font-medium">By Mama Sarah</span>
+                        <a href="#" class="text-sm font-bold text-orange-500 hover:text-orange-600">
+                            Lihat Resep →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu Resep 4 -->
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <img src="assets/seblak.webp"
+                         alt="Seblak" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
+                        30 Menit
+                    </span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
+                        Seblak
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
+                        Aroma kencur yang kuat, kuah medok yang pedas gurih, serta tekstur kerupuk yang kenyal berpadu dengan aneka topping tambahan lainnya yang selalu menjadi favorit.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                        <span class="text-xs text-gray-500 font-medium">By Warung Pojok</span>
+                        <a href="#" class="text-sm font-bold text-orange-500 hover:text-orange-600">
+                            Lihat Resep →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu Resep 5 -->
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <img src="assets/pempek.webp" 
+                         alt="Pempek" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
+                        45 Menit
+                    </span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
+                        Pempek Palembang
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
+                        Kelezatan rasa ikan yang dominan, tekstur yang empuk dan kenyal pas, serta perpaduan kuah cuko yang pedas asam, dan manis legit.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                        <span class="text-xs text-gray-500 font-medium">By Ibu Ami</span>
+                        <a href="#" class="text-sm font-bold text-orange-500 hover:text-orange-600">
+                            Lihat Resep →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu Resep 6 -->
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <img src="assets/nasi-goreng.jpg"
+                         alt="Nasi Goreng" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
+                        20 Menit
+                    </span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
+                        Nasi Goreng Spesial ala Rumahan
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
+                        Nasi goreng bumbu rempah autentik khas masakan ala rumahan dengan aroma sangit wajan yang khas, disajikan lengkap dengan telur ceplok.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                        <span class="text-xs text-gray-500 font-medium">By Chef Rudi</span>
+                        <a href="#" class="text-sm font-bold text-orange-500 hover:text-orange-600">
+                            Lihat Resep →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- 4. Footer Bagian Bawah -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+        <p>ResepKu &copy; 2026 - Tugas Kelompok Pemrograman Web 1</p>
+    </footer>
+
+    <!-- 5. Script JavaScript Smooth Scroll -->
+    <script>
+        // Tunggu sampai semua elemen HTML selesai dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Cari semua tombol / link yang punya class 'js-scroll-link'
+            const linkNavigasi = document.querySelectorAll('.js-scroll-link');
+
+            // Berikan perintah klik pada setiap tombol tersebut
+            linkNavigasi.forEach(tombol => {
+                tombol.addEventListener('click', function(e) {
+                    // Hentikan fungsi lompat mendadak bawaan browser
+                    e.preventDefault();
+
+                    // Ambil target ID dari atribut href (contoh: #katalog-resep)
+                    const targetId = this.getAttribute('href');
+                    const elemenTarget = document.querySelector(targetId);
+
+                    // Jika elemen target ditemukan, geser layar secara halus
+                    if (elemenTarget) {
+                        elemenTarget.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
 </html>
