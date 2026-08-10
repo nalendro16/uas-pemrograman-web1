@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beranda - ResepKu</title>
+    <title>Login - ResepKu</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       html {
@@ -12,7 +12,7 @@
     </style>
   </head>
   <body>
-    <nav class="bg-white shadow sticky top-0 z-50">
+    <!-- <nav class="bg-white shadow sticky top-0 z-50">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
           <a href="#" class="text-2xl font-bold text-orange-500">ResepKu</a>
@@ -30,6 +30,43 @@
       </div>
     </nav>
 
-    <main class="m-12">Ini login page</main>
+    <main class="m-12">Ini login page</main> -->
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img src="assets/logo-resepku.svg" alt="Logo ResepKu" class="mx-auto h-40 w-auto" />
+        <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+      </div>
+
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form action="#" method="POST" class="space-y-6">
+          <div>
+            <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
+            <div class="mt-2">
+              <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-orange-600 sm:text-sm/6" />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
+              <div class="text-sm">
+                <a href="#" class="font-semibold text-orange-600 hover:text-orange-500">Forgot password?</a>
+              </div>
+            </div>
+            <div class="mt-2">
+              <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-orange-600 sm:text-sm/6" />
+            </div>
+          </div>
+
+          <div>
+            <a href="index.html" class="flex w-full justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-orange-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">Sign in</a>
+        </form>
+
+        <p class="mt-10 text-center text-sm/6 text-gray-500">
+          Don't have an account?
+          <a href="#" class="font-semibold text-orange-600 hover:text-orange-500">Register for free</a>
+        </p>
+      </div>
+    </div>
   </body>
 </html>
