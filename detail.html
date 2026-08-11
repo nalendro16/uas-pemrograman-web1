@@ -8,18 +8,18 @@
   </head>
   <body class="bg-gray-50">
     <nav class="bg-white shadow">
-      <div class="max-w-4xl mx-auto px-4 py-4 flex items-center">
+      <div class="mx-auto flex px-4 items-center max-w-4xl py-4">
         <a
           href="index.html"
-          class="text-gray-500 hover:text-orange-500 flex items-center gap-2"
+          class="text-gray-500 flex gap-2 hover:text-orange-500 items-center"
         >
           &larr; Kembali ke Daftar Resep
         </a>
       </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-4 py-8">
-      <h1 id="detail-title" class="text-4xl font-extrabold text-gray-900 mb-4">
+    <main class="max-w-4xl px-4 py-8 mx-auto">
+      <h1 id="detail-title" class="text-4xl text-gray-900 mb-4 font-extrabold">
         Loading...
       </h1>
 
@@ -27,19 +27,21 @@
         id="detail-image"
         src=""
         alt="Loading"
-        class="w-full h-96 object-cover rounded-xl shadow-md mb-8"
+        class="w-full h-96 shadow-md mb-8 object-cover rounded-xl"
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-8 grid-cols-1">
         <div id="detail-bahan"></div>
         <div class="md:col-span-2">
-          <h2 class="text-2xl font-bold mb-4">Cara Memasak</h2>
-          <!-- handle desc disini -->
+          <h2 class="text-2xl mb-4 font-bold">Cara Memasak</h2>
           <div id="detail-langkah"></div>
 
-          <h3 class="text-xl font-bold mb-4">Video Tutorial</h3>
+          <h3 class="font-bold mb-2 text-xl">Video Tutorial</h3>
+          <span class="text-neutral-500 mb-2"
+            >Berikut adalah video tutorial untuk pembuatan resep ini:</span
+          >
           <div
-            class="w-full aspect-video rounded-lg overflow-hidden shadow-lg bg-black"
+            class="w-full aspect-video shadow-lg mt-2 bg-black overflow-hidden rounded-lg"
           >
             <iframe
               id="detail-video"
@@ -52,14 +54,14 @@
         </div>
       </div>
 
-      <div class="mt-12 pt-8 border-t border-gray-200">
+      <div class="mt-12 border-gray-200 border-t pt-8">
         <h2 id="rating-summary" class="text-2xl font-bold mb-6">
           Ulasan & Rating
         </h2>
 
         <div id="comments-container" class="space-y-6 mb-8"></div>
 
-        <div class="bg-orange-50 p-6 rounded-lg border border-orange-100">
+        <div class="border p-6 bg-orange-50 rounded-lg border-orange-100">
           <span class="text-neutral-400"
             ><a href="./login.html" class="text-blue-400 underline">Login</a>
             terlebih dahulu untuk memberikan ulasan.</span
@@ -120,10 +122,10 @@
           const commentsHTML = recipe.komentar
             .map(
               (komen) => `
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                    <div class="flex items-center justify-between mb-3">
+                <div class="p-5 bg-white shadow-sm rounded-lg border border-gray-100">
+                    <div class="flex justify-between mb-3 items-center">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold">
+                            <div class="w-10 rounded-full flex h-10 items-center font-bold bg-orange-100 justify-center text-orange-500">
                                 ${getInitial(komen.nama)}
                             </div>
                             <div>
