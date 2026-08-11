@@ -19,98 +19,33 @@
     </nav>
 
     <main class="max-w-4xl mx-auto px-4 py-8">
-      <h1 class="text-4xl font-extrabold text-gray-900 mb-4">
-        Mie Goreng Spesial ala Chinese Resto
+      <h1 id="detail-title" class="text-4xl font-extrabold text-gray-900 mb-4">
+        Loading...
       </h1>
 
       <img
-        src="./assets/mie-goreng.png"
-        alt="Mie Goreng Spesial"
-        class="object-cover w-full h-96 rounded-xl shadow-md mb-8"
+        id="detail-image"
+        src=""
+        alt="Loading"
+        class="w-full h-96 object-cover rounded-xl shadow-md mb-8"
       />
 
-      <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
-        <div class="md:col-span-1">
-          <h2 class="font-bold text-2xl mb-4">Bahan-bahan</h2>
-          <div class="overflow-x-auto rounded-lg shadow mb-6 bg-white">
-            <table class="w-full text-left border-collapse">
-              <thead>
-                <tr class="text-orange-800 border-b bg-orange-300">
-                  <th class="text-base p-3 font-semibold">Bahan</th>
-                  <th class="p-3 font-semibold">Takaran</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b hover:bg-gray-50">
-                  <td class="p-3">Mie Rebus</td>
-                  <td class="p-3">2 Porsi</td>
-                </tr>
-                <tr class="border-b hover:bg-gray-50">
-                  <td class="p-3">Telur Ayam</td>
-                  <td class="p-3">2 Butir</td>
-                </tr>
-                <tr class="border-b hover:bg-gray-50">
-                  <td class="p-3">Bawang Merah</td>
-                  <td class="p-3">5 Siung</td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                  <td class="p-3">Kecap Manis</td>
-                  <td class="p-3">3 sdm</td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                  <td class="p-3">Kecap Asin</td>
-                  <td class="p-3">1 sdm</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div id="detail-bahan"></div>
         <div class="md:col-span-2">
-          <h2 class="font-bold text-2xl mb-4">Cara Memasak</h2>
+          <h2 class="text-2xl font-bold mb-4">Cara Memasak</h2>
+          <!-- handle desc disini -->
+          <div id="detail-langkah"></div>
 
-          <div class="leading-relaxed mb-10 space-y-4 t text-gray-700">
-            <p>
-              Langkah pertama untuk membuat mie goreng yang
-              <u>lembut</u> dan tidak lembek adalah dengan menggunakan mie yang
-              sudah didinginkan semalaman di kulkas. Panaskan wajan dengan
-              sedikit minyak di atas api sedang.
-            </p>
-            <p>
-              Tumis bawang merah dan bawang putih yang sudah dihaluskan hingga
-              sampai harum. Masukkan telur,
-              <strong>lalu orak-arik hingga matang.</strong> Tambahkan mie, aduk
-              rata dengan bumbu dan telur.
-            </p>
-            <p>
-              Tambah kecap manis, garam, dan lada secukupnya. Besarkan api
-              sedikit agar tercipta aoma <i>smokey</i> dari wajan panas. Aduk
-              cepat hingga semua tercampur rata dan matang sempurna. Sajikan
-              selagi hangat!
-            </p>
-          </div>
-
-          <h3 class="font-bold mb-2 text-xl mb-2">Video Tutorial</h3>
-          <p class="text-gray-700 pb-4">Berikut vidio tutorial penbuatannya</p>
+          <h3 class="text-xl font-bold mb-4">Video Tutorial</h3>
           <div
-            class="overflow-hidden w-full rounded-lg shadow-lg aspect-w-16 aspect-h-9 bg-black"
+            class="w-full aspect-video rounded-lg overflow-hidden shadow-lg bg-black"
           >
             <iframe
-              class="w-full"
-              height="315"
-              src="https://www.youtube.com/embed/46CsR1Ma0EA?si=rDRZAWJgiSqq1SZW"
-              title="YouTube video player"
+              id="detail-video"
+              class="w-full h-full"
+              src=""
               frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>
           </div>
@@ -118,171 +53,104 @@
       </div>
 
       <div class="mt-12 pt-8 border-t border-gray-200">
-        <h2 class="text-2xl font-bold mb-6">Ulasan & Rating (4.8/5)</h2>
+        <h2 id="rating-summary" class="text-2xl font-bold mb-6">
+          Ulasan & Rating
+        </h2>
 
-        <div class="space-y-6 mb-8">
-          <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold"
-                >
-                  AS
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-800">Andi Saputra</h4>
-                  <p class="text-xs text-gray-500">2 hari yang lalu</p>
-                </div>
-              </div>
-              <div class="flex text-yellow-400">
-                <img
-                  src="./assets/ic_yellow_star.svg"
-                  class="w-5 h-5"
-                  alt="Bintang"
-                />
-                <img
-                  src="./assets/ic_yellow_star.svg"
-                  class="w-5 h-5"
-                  alt="Bintang"
-                />
-                <img
-                  src="./assets/ic_yellow_star.svg"
-                  class="w-5 h-5"
-                  alt="Bintang"
-                />
-                <img
-                  src="./assets/ic_yellow_star.svg"
-                  class="w-5 h-5"
-                  alt="Bintang"
-                />
-                <img
-                  src="./assets/ic_yellow_star.svg"
-                  class="w-5 h-5"
-                  alt="Bintang"
-                />
-              </div>
-            </div>
-            <p class="text-gray-700">
-              Wah mantap banget! Resepnya gampang diikutin, aromanya beneran
-              mirip nasi goreng tek-tek langganan. Keluarga pada suka!
-            </p>
-          </div>
+        <div id="comments-container" class="space-y-6 mb-8"></div>
 
-          <div class="p-5 rounded-lg shadow-sm border border-gray-100 bg-white">
-            <div class="items-center justify-between mb-4 flex">
-              <div class="flex gap-3 items-center">
-                <div
-                  class="rounded-full w-10 h-10 bg-blue-100 flex items-center justify-center text-blue-500 font-bold"
-                >
-                  MD
-                </div>
-                <div>
-                  <h4 class="text-gray-800 font-bold">Maya Dian</h4>
-                  <p class="text-xs text-gray-500">1 minggu yang lalu</p>
-                </div>
-              </div>
-              <div class="flex text-yellow-400">
-                <div class="flex gap-1">
-                  <img
-                    src="./assets/ic_yellow_star.svg"
-                    class="w-5 h-5"
-                    alt="Bintang"
-                  />
-                  <img
-                    src="./assets/ic_yellow_star.svg"
-                    class="w-5 h-5"
-                    alt="Bintang"
-                  />
-                  <img
-                    src="./assets/ic_yellow_star.svg"
-                    class="w-5 h-5"
-                    alt="Bintang"
-                  />
-                  <img
-                    src="./assets/ic_yellow_star.svg"
-                    class="w-5 h-5"
-                    alt="Bintang"
-                  />
-                  <img
-                    src="./assets/ic_gray_star.svg"
-                    class="w-5 h-5"
-                    alt="Bintang"
-                  />
-                </div>
-              </div>
-            </div>
-            <p class="text-gray-700">
-              Enak, tapi agak keasinan buat lidah saya. Mungkin next time kecap
-              asinnya dikurangin dikit. Overall mantap!
-            </p>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-lg bg-orange-50 border border-orange-100">
-          <h3 class="mb-4 text-lg font-bold text-gray-800">Tulis Ulasanmu</h3>
-
-          <div
-            id="commentAlert"
-            class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"
-            role="alert"
+        <div class="bg-orange-50 p-6 rounded-lg border border-orange-100">
+          <span class="text-neutral-400"
+            ><a href="./login.html" class="text-blue-400 underline">Login</a>
+            terlebih dahulu untuk memberikan ulasan.</span
           >
-            <span class="block sm:inline"
-              >Terima kasih! Ulasan kamu berhasil dikirim.</span
-            >
-          </div>
-
-          <form id="commentForm" class="space-y-4">
-            <div>
-              <label class="block text-gray-700 text-sm font-bold mb-2"
-                >Beri Rating</label
-              >
-              <select
-                class="w-full md:w-1/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-orange-500"
-              >
-                <option value="5">⭐⭐⭐⭐⭐ (Sangat Enak)</option>
-                <option value="4">⭐⭐⭐⭐ (Enak)</option>
-                <option value="3">⭐⭐⭐ (Biasa Aja)</option>
-                <option value="2">⭐⭐ (Kurang)</option>
-                <option value="1">⭐ (Tidak Enak)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-gray-700 text-sm font-bold mb-2"
-                >Komentar</label
-              >
-              <textarea
-                id="commentText"
-                rows="4"
-                required
-                class="border border-gray-300 w-full px-3 py-2rounded-md focus:outline-none focus:border-orange-500 w-full"
-                placeholder="Bagaimana hasil masakanmu? Bagikan di sini..."
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-colors"
-            >
-              Kirim Ulasan
-            </button>
-          </form>
         </div>
       </div>
     </main>
 
+    <script src="data.js"></script>
+
     <script>
-      document
-        .getElementById('commentForm')
-        .addEventListener('submit', function (e) {
-          e.preventDefault()
+      const urlParams = new URLSearchParams(window.location.search)
+      const recipeId = parseInt(urlParams.get('id'))
 
-          const alertBox = document.getElementById('commentAlert')
-          alertBox.classList.remove('hidden')
-          document.getElementById('commentText').value = ''
+      const recipe = recipes.find((r) => r.id === recipeId)
 
-          setTimeout(() => {
-            alertBox.classList.add('hidden')
-          }, 3000)
-        })
+      function generateStars(rating) {
+        let starsHTML = ''
+        for (let i = 1; i <= 5; i++) {
+          if (i <= rating) {
+            starsHTML += `<img src="./assets/ic_yellow_star.svg" class="w-5 h-5" alt="Bintang Aktif">`
+          } else {
+            starsHTML += `<img src="./assets/ic_gray_star.svg" class="w-5 h-5" alt="Bintang Redup">`
+          }
+        }
+        return `<div class="flex gap-1">${starsHTML}</div>`
+      }
+
+      function getInitial(name) {
+        return name
+          .split(' ')
+          .map((n) => n[0])
+          .join('')
+          .substring(0, 2)
+          .toUpperCase()
+      }
+
+      if (recipe) {
+        document.title = recipe.title + ' - ResepKu'
+        document.getElementById('detail-title').innerText = recipe.title
+        document.getElementById('detail-image').src = recipe.image
+
+        document.getElementById('detail-video').src = recipe.video
+        document.getElementById('detail-bahan').innerHTML = recipe.bahan
+        document.getElementById('detail-langkah').innerHTML = recipe.langkah
+
+        const commentsContainer = document.getElementById('comments-container')
+        const ratingSummary = document.getElementById('rating-summary')
+
+        if (recipe.komentar && recipe.komentar.length > 0) {
+          const totalRating = recipe.komentar.reduce(
+            (acc, curr) => acc + curr.rating,
+            0,
+          )
+          const avgRating = (totalRating / recipe.komentar.length).toFixed(1)
+          ratingSummary.innerText = `Ulasan & Rating (${avgRating}/5)`
+
+          const commentsHTML = recipe.komentar
+            .map(
+              (komen) => `
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 font-bold">
+                                ${getInitial(komen.nama)}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">${komen.nama}</h4>
+                                <p class="text-xs text-gray-500">${komen.tanggal}</p>
+                            </div>
+                        </div>
+                        <!-- Panggil fungsi generate bintang -->
+                        ${generateStars(komen.rating)}
+                    </div>
+                    <p class="text-gray-700">${komen.teks}</p>
+                </div>
+            `,
+            )
+            .join('')
+
+          commentsContainer.innerHTML = commentsHTML
+        } else {
+          ratingSummary.innerText = `Ulasan & Rating (Belum ada ulasan)`
+          commentsContainer.innerHTML = `<p class="text-gray-500 italic">Belum ada komentar untuk resep ini. Jadilah yang pertama!</p>`
+        }
+      } else {
+        document.getElementById('detail-title').innerText =
+          'Resep Tidak Ditemukan'
+        document.getElementById('detail-desc').innerText =
+          'Maaf, resep yang Anda cari tidak ada.'
+      }
     </script>
   </body>
 </html>
