@@ -13,7 +13,6 @@ IDENTITAS KELOMPOK
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ResepKu - Katalog Resep Masakan Nusantara</title>
-    <!-- Memanggil Tailwind CSS lewat CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-50 text-gray-800 font-sans antialiased">
@@ -55,19 +54,11 @@ IDENTITAS KELOMPOK
             class="js-scroll-link bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all text-sm flex items-center gap-2"
           >
             <span>Cari Resep</span>
-            <svg
+            <img
+              src="./assets/ic_dropdown.svg"
               class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+              alt="Dropdown"
+            />
           </a>
 
           <a
@@ -137,7 +128,6 @@ IDENTITAS KELOMPOK
         </span>
       </div>
 
-      <!-- Grid Pembungkus Kartu Resep -->
       <div
         id="recipe-container"
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
@@ -145,64 +135,133 @@ IDENTITAS KELOMPOK
         <script src="data.js"></script>
         <script>
           const container = document.getElementById('recipe-container')
-          const cardsHTML = recipes
-            .map(
-              (recipe) => `
-        <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-            <div class="relative h-56 w-full overflow-hidden bg-gray-100">
-                <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
-                    ${recipe.time}
-                </span>
-            </div>
-            <div class="p-6 flex flex-col flex-grow">
-                <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
-                    ${recipe.title}
-                </h3>
-                <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
-                    ${recipe.desc}
-                </p>
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
-                    <span class="text-xs text-gray-500 font-medium">By ${recipe.author}</span>
-                    <!-- Pass ID ke URL detail.html -->
-                    <a href="detail.html?id=${recipe.id}" class="text-sm font-bold text-orange-500 hover:text-orange-600">
-                        Lihat Resep →
-                    </a>
-                </div>
-            </div>
-        </article>
-    `,
-            )
-            .join('')
 
-          container.innerHTML = cardsHTML
+          const tombolCari = document.querySelector(
+            'a[href="#katalog-resep"].bg-orange-500',
+          )
+
+          if (tombolCari) {
+            tombolCari.addEventListener('click', function (e) {
+              e.preventDefault()
+
+              this.outerHTML = `
+            <form id="search-form" class="relative flex items-center">
+                <input 
+                    type="text" 
+                    id="search-input"
+                    placeholder="Cari menu resep..." 
+                    autofocus
+                    autoComplete="off"
+                    class="bg-gray-100 text-sm rounded-full pl-4 pr-10 py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500 w-40 md:w-56 transition-all"
+                >
+                <button type="button" class="absolute right-3 text-gray-400 hover:text-orange-500">
+                   <img
+              src="./assets/ic_search.svg"
+              class="w-4 h-4"
+              alt="Dropdown"
+            />
+                </button>
+            </form>
+          `
+              const searchInput = document.getElementById('search-input')
+              if (searchInput) {
+                searchInput.addEventListener('input', (event) => {
+                  const keyword = event.target.value.toLowerCase()
+                  const filteredData = recipes.filter(
+                    (recipe) =>
+                      recipe.title.toLowerCase().includes(keyword) ||
+                      recipe.author.toLowerCase().includes(keyword),
+                  )
+                  renderRecipes(filteredData)
+                })
+              }
+            })
+          }
+
+          function renderRecipes(dataToRender) {
+            if (dataToRender.length === 0) {
+              container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500 font-medium">Maaf, resep yang kamu cari tidak ditemukan.</div>`
+              return
+            }
+
+            const cardsHTML = dataToRender
+              .map(
+                (recipe) => `
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-lg">
+                        ${recipe.time}
+                    </span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 transition-colors line-clamp-1 mb-2">
+                        ${recipe.title}
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2 mb-6 flex-grow">
+                        ${recipe.desc}
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                        <span class="text-xs text-gray-500 font-medium">By ${recipe.author}</span>
+                        <a href="detail.html?id=${recipe.id}" class="text-sm font-bold text-orange-500 hover:text-orange-600">
+                            Lihat Resep →
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `,
+              )
+              .join('')
+
+            container.innerHTML = cardsHTML
+          }
+
+          renderRecipes(recipes)
+
+          const searchInput = document.getElementById('search-input')
+          const searchForm = document.getElementById('search-form')
+
+          if (searchForm) {
+            searchForm.addEventListener('submit', (e) => {
+              e.preventDefault()
+              document
+                .getElementById('katalog-resep')
+                .scrollIntoView({ behavior: 'smooth' })
+            })
+          }
+
+          if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+              const keyword = e.target.value.toLowerCase()
+
+              const filteredData = recipes.filter(
+                (recipe) =>
+                  recipe.title.toLowerCase().includes(keyword) ||
+                  recipe.author.toLowerCase().includes(keyword),
+              )
+
+              renderRecipes(filteredData)
+            })
+          }
         </script>
       </div>
     </main>
 
-    <!-- 4. Footer Bagian Bawah -->
     <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
       <p>ResepKu &copy; 2026 - Tugas Kelompok Pemrograman Web 1</p>
     </footer>
 
-    <!-- 5. Script JavaScript Smooth Scroll -->
     <script>
-      // Tunggu sampai semua elemen HTML selesai dimuat
       document.addEventListener('DOMContentLoaded', () => {
-        // Cari semua tombol / link yang punya class 'js-scroll-link'
         const linkNavigasi = document.querySelectorAll('.js-scroll-link')
 
-        // Berikan perintah klik pada setiap tombol tersebut
         linkNavigasi.forEach((tombol) => {
           tombol.addEventListener('click', function (e) {
-            // Hentikan fungsi lompat mendadak bawaan browser
             e.preventDefault()
 
-            // Ambil target ID dari atribut href (contoh: #katalog-resep)
             const targetId = this.getAttribute('href')
             const elemenTarget = document.querySelector(targetId)
 
-            // Jika elemen target ditemukan, geser layar secara halus
             if (elemenTarget) {
               elemenTarget.scrollIntoView({
                 behavior: 'smooth',
